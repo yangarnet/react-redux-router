@@ -8,6 +8,7 @@ import TodoList from './TodoList';
 import AddTodo from './AddTodo';
 import Footer from './Footer';
 import Posts from './async-connect-posts';
+import Spinner from './spinner/Spinner';
 
 class App extends Component {
 
@@ -18,6 +19,7 @@ class App extends Component {
                 <h3>
                     welcome to react world: {this.props.name}
                     <Timer/>
+                    <Spinner/>
                 </h3>
                 <ul>
                     <li><Link to='/'>Home</Link></li>

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.dev.js --progress --colors",
-    "build": "webpack --config ./webpack.config.prod.js --progress --colors"
+    "build": "mkdir -p dist && mkdir -p dist/public && cp ./public/img/spin.png ./dist/public/ && webpack --config ./webpack.config.prod.js  --progress --colors"
   },
   "author": "gyang",
   "license": "ISC",
@@ -20,7 +20,8 @@
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^3.4.6"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -30,6 +31,7 @@
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
