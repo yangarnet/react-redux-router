@@ -6,17 +6,17 @@ import ToDo from './ToDo';
 // dispatch() the action creator
 import { toggleTodo } from '../actions/todoAction';
 
-const TodoList = (props) => {
-
-
+const TodoList = props => {
     return (
         <div>
             <h3>here is your todo list:</h3>
-            <br/>
+            <br />
             <ul>
-            {console.log('todo list', props.todos)}
-            { props.todos.map((todo, index) => (<ToDo key={index} {...todo} onClick={ ()=>props.onTodoClick(index) } />)) }
-        </ul>
+                {console.log('todo list', props.todos)}
+                {props.todos.map((todo, index) => (
+                    <ToDo key={index} {...todo} onClick={() => props.onTodoClick(index)} />
+                ))}
+            </ul>
         </div>
     );
 };
@@ -35,13 +35,13 @@ TodoList.propTypes = {
 const getTodoByFilter = (todos, filter) => {
     switch (filter) {
         case 'SHOW_COMPLETED':
-          return todos.filter(t => t.completed)
+            return todos.filter(t => t.completed);
         case 'SHOW_ACTIVE':
-          return todos.filter(t => !t.completed)
+            return todos.filter(t => !t.completed);
         case 'SHOW_ALL':
         default:
-          return todos
-      }
+            return todos;
+    }
 };
 
 // by mapStateToProps; ownProps--optional;  dispatch(action) alread turns up in the props
@@ -49,19 +49,20 @@ const mapStateToProps = (state, ownProps) => {
     //console.log('todo list state:', state);
     return {
         todos: getTodoByFilter(state.todos, state.filter)
-    }
+    };
 };
 
 // this is mapping dispatch(action) to an customized function
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        onTodoClick: (id) => {
+        onTodoClick: id => {
             // dispatch action from here
-            dispatch(toggleTodo(id))
+            dispatch(toggleTodo(id));
         }
     };
 };
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
-
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(TodoList);

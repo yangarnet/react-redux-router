@@ -7,11 +7,10 @@ class Register extends Component {
     }
 
     render() {
-
         return (
             <div>
                 Register
-                <Link to='/'>Home</Link>
+                <Link to="/">Home</Link>
             </div>
         );
     }

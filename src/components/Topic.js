@@ -4,7 +4,7 @@ import MyNode from './nested-routes/MyNode';
 import MyReact from './nested-routes/MyReact';
 import MyAngular from './nested-routes/MyAngular';
 
-const Topic = (props) => {
+const Topic = props => {
     const path = props.match.path;
     return (
         <div>
@@ -20,9 +20,9 @@ const Topic = (props) => {
                     <Link to={`${path}/angular-js`}>angular js</Link>
                 </li>
             </ul>
-            <Route path={`${path}/node-js`} component={MyNode}/>
-            <Route path={`${path}/react-js`} component={MyReact}/>
-            <Route path={`${path}/angular-js`} component={MyAngular}/>
+            <Route path={`${path}/node-js`} component={MyNode} />
+            <Route path={`${path}/react-js`} component={MyReact} />
+            <Route path={`${path}/angular-js`} component={MyAngular} />
         </div>
     );
 };

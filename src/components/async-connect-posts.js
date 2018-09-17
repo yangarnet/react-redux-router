@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { selectSubreddit, fetchPost, fetchPostIfNeeded } from '../actions/subreddit-actions';
 
-
 class Posts extends Component {
-
     constructor(props) {
         super(props);
         this.onChange = this.onChange.bind(this);
@@ -29,7 +27,6 @@ class Posts extends Component {
     }
 
     render() {
-
         return (
             <div>
                 <label>select your subreddit:</label>
@@ -41,14 +38,10 @@ class Posts extends Component {
                     <option value="mongodb">mongodb</option>
                 </select>
                 <ul>
-                    {
-                        this.props.posts[this.props.selectRedit] &&
+                    {this.props.posts[this.props.selectRedit] &&
                         this.props.posts[this.props.selectRedit].items.map(itm => (
-                            <li key={itm.id}>
-                                {`title: ${itm.title}, text: ${itm.selftext}`}
-                            </li>)
-                        )
-                    }
+                            <li key={itm.id}>{`title: ${itm.title}, text: ${itm.selftext}`}</li>
+                        ))}
                 </ul>
             </div>
         );
@@ -76,6 +69,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     };
 };
 
-
 // after connect,  your component will come with dispatch(), this is awesome!
-export default connect(mapStateToProps, mapDispatchToProps)(Posts);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Posts);

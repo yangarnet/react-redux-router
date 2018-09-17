@@ -9,4 +9,3 @@ export const filter_type = {
     SHOW_ACTIVE: 'SHOW_ACTIVE',
     SHOW_COMPLETED: 'SHOW_COMPLETED'
 };
-

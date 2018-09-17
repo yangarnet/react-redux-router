@@ -9,11 +9,11 @@ class Timer extends Component {
     }
 
     tick() {
-        this.intervalId = setInterval(()=>{
+        this.intervalId = setInterval(() => {
             this.setState({
                 currentTime: new Date().toLocaleTimeString()
             });
-        }, 1000)
+        }, 1000);
     }
 
     componentDidMount() {
@@ -27,7 +27,10 @@ class Timer extends Component {
     render() {
         return (
             <div>
-                <h2>currentTime:{this.state.currentTime}</h2>
+                <h2>
+                    currentTime:
+                    {this.state.currentTime}
+                </h2>
             </div>
         );
     }

@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 
 const Link = ({ active, children, onClick }) => {
     return (
-        <button
-            disabled={active}
-            onClick={onClick}
-            style={{marginLeft: '4px'}}
-        >
+        <button disabled={active} onClick={onClick} style={{ marginLeft: '4px' }}>
             {children}
         </button>
     );

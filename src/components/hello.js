@@ -10,7 +10,7 @@ class Hello extends Component {
 
     render() {
         const match = this.props.match;
-        const extraData = [1,2,3];
+        const extraData = [1, 2, 3];
         return (
             <div>
                 <h3>welcome to Hello</h3>
@@ -22,10 +22,8 @@ class Hello extends Component {
                         <Link to={`${match.path}/register`}>register</Link>
                     </li>
                 </ul>
-                <Route path={`${match.path}/login`} component={Login}/>
-                <Route path={`${match.path}/register`} render={(props)=>(
-                    <Register {...props} data ={extraData} />
-                )}/>
+                <Route path={`${match.path}/login`} component={Login} />
+                <Route path={`${match.path}/register`} render={props => <Register {...props} data={extraData} />} />
             </div>
         );
     }

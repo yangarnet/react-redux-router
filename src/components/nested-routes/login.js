@@ -7,13 +7,10 @@ class Login extends Component {
     }
 
     render() {
-
         return (
             <div>
-                 <Link to='/'>Home</Link>
-                 <div>
-                     this is the login page;
-                 </div>
+                <Link to="/">Home</Link>
+                <div>this is the login page;</div>
             </div>
         );
     }

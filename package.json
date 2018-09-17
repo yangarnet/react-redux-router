@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.dev.js --progress --colors",
-    "build": "mkdir -p dist && mkdir -p dist/public && cp ./public/img/spin.png ./dist/public/ && webpack --config ./webpack.config.prod.js  --progress --colors"
+    "build": "webpack --config ./webpack.config.prod.js  --progress --colors"
   },
   "author": "gyang",
   "license": "ISC",
