@@ -4,7 +4,7 @@
   "description": "demo of react route and setup react app without using create-react-app ",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.dev.js --progress --colors",
+    "start": "webpack-dev-server --config ./webpack.config.common.js --progress --colors",
     "build": "webpack --config ./webpack.config.prod.js  --progress --colors"
   },
   "author": "gyang",

@@ -5,6 +5,10 @@ module.exports = {
     entry: {
         index: './src/index.js'
     },
+    output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    },
     plugins: [
         new CleanWebpackPlugin(['index']),
         new HtmlWebpackPlugin({
@@ -30,9 +34,5 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.jsx', '.json']
-    },
-    output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist')
     }
 };
