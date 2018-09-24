@@ -7,7 +7,7 @@ import Topic from './Topic';
 import TodoList from './TodoList';
 import AddTodo from './AddTodo';
 import Footer from './Footer';
-import Posts from './async-connect-posts';
+import Posts from './posts';
 import Spinner from './spinner/Spinner';
 
 class App extends Component {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Spinner from './spinner/Spinner';
 import { selectSubreddit, fetchPost, fetchPostIfNeeded } from '../actions/subreddit-actions';
 
 class Posts extends Component {
@@ -37,12 +38,16 @@ class Posts extends Component {
                     <option value="javascript">javascript</option>
                     <option value="mongodb">mongodb</option>
                 </select>
-                <ul>
-                    {this.props.posts[this.props.selectRedit] &&
-                        this.props.posts[this.props.selectRedit].items.map(itm => (
-                            <li key={itm.id}>{`title: ${itm.title}, text: ${itm.selftext}`}</li>
-                        ))}
-                </ul>
+                {!this.props.posts[this.props.selectRedit] ? (
+                    <Spinner />
+                ) : (
+                    <ul>
+                        {this.props.posts[this.props.selectRedit] &&
+                            this.props.posts[this.props.selectRedit].items.map(itm => (
+                                <li key={itm.id}>{`title: ${itm.title}, text: ${itm.selftext}`}</li>
+                            ))}
+                    </ul>
+                )}
             </div>
         );
     }

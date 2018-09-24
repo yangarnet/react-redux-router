@@ -16,6 +16,7 @@ describe('ASYNC action', () => {
         moxios.uninstall();
     });
 
+    it('dispatch action properly', () => {});
     it('should dispacth and get result properly', done => {
         const dispacthMock = sinon.mock();
         moxios.withMock(() => {
